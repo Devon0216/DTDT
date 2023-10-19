@@ -1,0 +1,7 @@
+/* Simple page layout for the server */
+body {
+    background-color: #000;
+    color: whitesmoke;
+    display: grid;
+    place-content: center;
+}

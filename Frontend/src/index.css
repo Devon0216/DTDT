@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Colour */
+:root {
+  --BGCOLOR: #1f2227;
+  --BORDER-COLOR: #FFF;
+  --COLOR: #FFF;
+  --TABLE-BGCOLOR: #FFF;
+  --TABLE-COLOR: #000;
+}
+
+/* Overall style */
+body {
+  font-family: 'Nunito', sans-serif;
+  min-height: 100vh;
+  background-color: var(--BGCOLOR);
+  color: var(--COLOR);
+  background-size: cover;
+  background-position: top right;
+  background-blend-mode: multiply;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Headings */
+.sectionHeading {
+  color:coral;
+}
+
+.dash-header__title {
+  color: coral;
+  font-size: 3rem;
+}
+
+/* Public and Welcome pages */
+.public,
+.welcome {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.public {
+  padding: 0em;
+  flex-grow: 1;
+}
+
+.public__main,
+
+/* Dash header and container for navigation */
+.dash-header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: var(--BGCOLOR);
+  padding: 0 0.5em;
+  border-bottom: 1px solid var(--BORDER-COLOR);
+}
+
+.dash-header__container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dash-container {
+  padding: 0.75em 0.5em 0.5em;
+  flex-grow: 1;
+}
+
+.dash-footer {
+  font-size: 1rem;
+  position: sticky;
+  bottom: 0;
+  z-index: 1;
+  background-color: var(--BGCOLOR);
+  padding: 0.5em;
+  border-top: 1px solid var(--BORDER-COLOR);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  gap: 1em;
+}
+
+/* Tables */
+thead,
+tbody,
+tr {
+  display: contents;
+}
+
+.table {
+  font-size: 1rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  color: var(--TABLE-COLOR);
+  gap: 0.1em;
+}
+
+.table_workshop {
+  font-size: 1rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  color: var(--TABLE-COLOR);
+  gap: 0.1em;
+}
+
+.table_agenda {
+  font-size: 1rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  color: var(--TABLE-COLOR);
+  gap: 0.1em;
+}
+
+.table_session {
+  font-size: 1rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  color: var(--TABLE-COLOR);
+  gap: 0.1em;
+}
+
+.table__thead {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.table__th,
+.table__cell {
+  background-color: var(--TABLE-BGCOLOR);
+  text-align: left;
+  border: 1px solid var(--TABLE-COLOR);
+  padding: 0.5em;
+}
+
+.table__cell:hover {
+  background-color: coral;
+  text-decoration: underline;
+}
+
+/* Sections */
+.section {
+  border-bottom: 1px solid var(--BORDER-COLOR);
+}
+
+/* Error message */
+.errorMessage{
+  color: red;
+}
+
+/* Orange uttons */
+.button-orange {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 19px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #000000;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 15px;
+  opacity: 1;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.button-orange:hover {
+  background-color: coral;
+  opacity: 0.8;
+}
+
+.button-orange:active {
+  background-color: coral;
+  transform: translateY(4px);
+}
+
+.button-orange:disabled {
+  background-color: gray; 
+  cursor: not-allowed; 
+  opacity: 0.6;
+}
+
+/* Agenda sessions */
+.runningSession {
+  background-color: coral;
+  text-align: left;
+  border: 1px solid var(--TABLE-COLOR);
+  padding: 0.5em;
+  font-weight: bold;
+}
+
+.runningSession:hover {
+  background-color: --TABLE-BGCOLOR;
+  text-decoration: underline;
+}
+
+/* Collapse text */
+.collapse {
+  text-decoration: underline;
+}
+.collapse:hover {
+  color:coral;
+  text-decoration: underline;
+}
+
+/* Mobile or smaller Screens */
+@media screen and (max-width: 400px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .dash-footer {
+    padding: 0 1em;
+    gap: 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    font-size: 1.25rem;
+  }
+
+  .dash-header {
+    padding: 0 1em;
+  }
+
+  .dash-container {
+    padding: 1em;
+  }
+
+  .dash-footer {
+    padding: 0 1em;
+    gap: 0;
+  }
+
+  .table {
+    font-size: 1.5rem;
+  }
+}
